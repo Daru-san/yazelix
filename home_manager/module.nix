@@ -232,7 +232,7 @@ in {
           extra_terminals = ${builtins.toJSON cfg.extra_terminals};
           cursor_trail = "${cfg.cursor_trail}";
           transparency = "${cfg.transparency}";
-          include_terminal = "${cfg.include_terminal}";
+          include_terminal = ${if cfg.include_terminal then "true" else "false"};
 
           # Editor configuration
           editor_command = ${if cfg.editor_command != null then ''"${cfg.editor_command}"'' else "null"};
